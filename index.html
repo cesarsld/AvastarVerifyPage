@@ -115,7 +115,7 @@
                 params: [msgParams, userAddress],
                 from: userAddress,
             }, function (err, result){
-                document.getElementById("d-box2").innerText = "Signature copied to clipboard!;
+                document.getElementById("d-box2").innerText = "Signature copied to clipboard!";
                 fallbackCopyTextToClipboard("$verify " + userAddress + " " + result.result)
             }); 
         }
