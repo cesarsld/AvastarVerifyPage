@@ -29,11 +29,9 @@
 
     <div id="d-box1" class="final-box" >
         <p>Your Signature will appear here once you've signed the message<br>
-            Please copy over the following text and message it to the AvastarBot<br>
+            It will also be copied on your clipboard. Please paste it as a message to the AvastarBot<br>
         </p>
         <div id="d-box2" class="final-box1">
-            <p>
-            </p>
         </div>
 
 
@@ -118,6 +116,8 @@
                 from: userAddress,
             }, function (err, result){
                 document.getElementById("d-box2").innerText = "$verify " + userAddress + " " + result.result;
+                document.getElementById("d-box2").select();
+                document.execCommand("copy");
             }); 
         }
 
