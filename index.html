@@ -5,8 +5,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TipBot Deposit Page</title>
-  <meta name="description" content="Allows Discord users to deposit erc-20 tokens to their TipWallets">
+  <title>Avastar verification Page</title>
+  <meta name="description" content="Allows Discord users to bind an address to their discord ID">
   <meta name="author" content="Owl">
   <meta name="theme-color" content="#def2d9">
   <link rel="stylesheet" href="css/styles.css">
@@ -136,35 +136,6 @@
             if (regexp.test(id))
                 return  true;
             return false;
-        }
-
-        function trim (s, c) {
-            if (c === "]") c = "\\]";
-            if (c === "\\") c = "\\\\";
-            return s.replace(new RegExp(
-                "^[" + c + "]+|[" + c + "]+$", "g"
-            ), "");
-        }
-
-        function convertUintToReadable(str, dec)
-        {
-            dec = parseInt(dec);
-            if (str.length <= dec)
-            {
-                str = str.padStart(dec, '0');
-                str = "0." + str;
-            }
-            else
-            {
-                str =  str.slice(0, str.length - dec) + '.' + str.slice(str.length - dec)
-            }
-            str = trim(str, '0');
-            if (str[str.length - 1] == '.')
-            {
-                str = str.substring(0, str.length - 1);
-                return str;
-            }
-            return str;
         }
 
         function fallbackCopyTextToClipboard(text) {
