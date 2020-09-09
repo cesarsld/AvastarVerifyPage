@@ -123,6 +123,16 @@ form {
   text-align: center;
 }
 
+.final-box1 p {
+  font-family: 'Inconsolata', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #6c757d;
+  letter-spacing: 0.2px;
+  line-height: 1.8rem;
+  text-align: center;
+}
+
 .dialog-box b,
 .dialog-box a {
   color: #007bff;
