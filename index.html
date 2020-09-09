@@ -97,22 +97,10 @@
 
         function generateSignature()
         {
-            const msgParams = [
-                {   
-                    type: 'uint64',
-                    name: 'DiscordId',
-                    value: discordId
-                },
-                {
-                    type: 'string',      // Any valid solidity type
-                    name: 'User address',     // Any string label you want
-                    value: userAddress  // The value to sign
-                }
-            ];
-
+            let msg = "DiscordId = " + discordId + "\nUserAddress = " + userAddress;
             web3.currentProvider.sendAsync({
-                method: 'eth_signTypedData',
-                params: [msgParams, userAddress],
+                method: 'personal_sign',
+                params: [msg, userAddress],
                 from: userAddress,
             }, function (err, result){
                 document.getElementById("d-box2").innerText = "Signature copied to clipboard!";
