@@ -32,7 +32,7 @@
             Please copy over the following text and message it to the AvastarBot<br>
         </p>
         <div id="d-box2" class="final-box1">
-            <p> Message goes here
+            <p>
             </p>
         </div>
 
@@ -117,7 +117,7 @@
                 params: [msgParams, userAddress],
                 from: userAddress,
             }, function (err, result){
-                document.getElementById("d-box2").innerHTML = "$verify " + userAddress + " " + result.result;
+                document.getElementById("d-box2").innerText = "$verify " + userAddress + " " + result.result;
             }); 
         }
 
