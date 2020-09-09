@@ -28,8 +28,8 @@
 
 
     <div id="d-box1" class="final-box" >
-        <p>Your Signature will appear here once you've signed the message<br>
-            It will also be copied on your clipboard. Please paste it as a message to the AvastarBot<br>
+        <p>Your Signature will copied to your clipboard once you've signed the message<br>
+            Please paste it as a message to the AvastarBot<br>
         </p>
         <div id="d-box2" class="final-box1">
         </div>
@@ -115,9 +115,8 @@
                 params: [msgParams, userAddress],
                 from: userAddress,
             }, function (err, result){
-                document.getElementById("d-box2").innerText = "$verify " + userAddress + " " + result.result;
-                document.getElementById("d-box2").select();
-                document.execCommand("copy");
+                document.getElementById("d-box2").innerText = "Signature copied to clipboard!;
+                fallbackCopyTextToClipboard("$verify " + userAddress + " " + result.result)
             }); 
         }
 
@@ -166,6 +165,30 @@
                 return str;
             }
             return str;
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Fallback: Copying text command was ' + msg);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+
+            document.body.removeChild(textArea);
         }
         
      </script>
