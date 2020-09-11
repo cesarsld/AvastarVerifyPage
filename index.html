@@ -102,7 +102,7 @@
                 params: [msg, userAddress],
                 from: userAddress,
             }, function (err, result){
-                document.getElementById("d-box2").innerText = "Message copied to clipboard!\nYou can close this window";
+                document.getElementById("d-box2").innerText = "Message copied to clipboard!\n(You can close this window)";
                 fallbackCopyTextToClipboard("$verify " + userAddress + " " + result.result)
             }); 
         }
