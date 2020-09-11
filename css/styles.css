@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:wght@500');
+/* @import url('https://fonts.googleapis.com/css?family=Inconsolata:wght@500'); */
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:wght@900&display=swap');
 
 html {
   font-size: 16px;
@@ -105,8 +106,8 @@ form {
 }
 
 .dialog-box p {
-  font-family: 'Inconsolata', sans-serif;
-  font-weight: 500;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 900;
   font-size: 1.1rem;
   color: #6c757d;
   letter-spacing: 0.2px;
@@ -114,9 +115,9 @@ form {
 }
 
 .final-box {
-  font-family: 'Inconsolata', sans-serif;
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  font-size: 30px;
   color: #6c757d;
   letter-spacing: 0.2px;
   line-height: 1.8rem;
@@ -124,7 +125,7 @@ form {
 }
 
 .final-box1 p {
-  font-family: 'Inconsolata', sans-serif;
+  font-family: 'Inconsolata', monospace;
   font-weight: 500;
   font-size: 1.1rem;
   color: #6c757d;
